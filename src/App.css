@@ -5,12 +5,13 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .scene_container {
   width: 100%;
   height: 100vh;
-  background-color: #141414;
+  background: conic-gradient(rgb(182, 212, 255), rgb(0, 0, 0), rgb(146, 141, 248));
+  touch-action: none;
+
 }
 
 .pages {
@@ -98,23 +99,23 @@
 }
 
 .page--construction {
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 0;
   bottom: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 .message {
   color: #fff;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 192px;
-  line-height: 200px;
+  font-family: 'Anton';
+  font-size: 160px;
+  line-height: 160px;
   z-index: 99999;
 }
 
 .message--sub {
   font-family: 'Roboto';
-  color: #8c8c8c;
+  color: #ebe8e8;
   font-size: 24px;
 }
 
@@ -144,11 +145,40 @@
 
 
 @media (max-width: 600px) {
+
+  
+  .scene_container {
+    width: 100%;
+    height: 100vh;
+    background: conic-gradient(rgb(182, 212, 255), rgb(0, 0, 0), rgb(146, 141, 248));
+
+   
+    touch-action: pan-y; /* Allow vertical scrolling */
+    overflow: auto; /* Enable scrolling */
+    
+}
+  
+
   .message {
-    font-size: 32px;
+    font-size: 58px;
+    line-height: 60px;
+
   }
 
   .message--sub {
     font-size: 16px;
+    padding-left: 5vh;
+    padding-right: 5vh;
   }
+
+  
+  div#page-3 {
+    left: 50%;
+    width: 100vw;
+}
+  div#page-4 {
+    left: 50%;
+    width: 100vw;
+}
+
 }

@@ -1,33 +1,39 @@
-import { OrbitControls, useScroll } from '@react-three/drei'
-import React, { useLayoutEffect, useRef } from 'react'
+import { OrbitControls, useScroll } from "@react-three/drei";
+import { useLayoutEffect, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 
 const Box = () => {
-const scrollControl = useScroll();
-const timeline = useRef();
-const box = useRef();
- 
-console.log(timeline)
-    useLayoutEffect(() => {
-        timeline.current = gsap.timeline();
-        console.log(timeline.current)
-        // Box animations
-        let animationData = [];
-        const AnimationsBox = [
-            //Controls, Camera,CameraZoom
-        
-          ];
-          animationData = [...animationData, ...AnimationsBox];
-      
-    }),[];
+  const scrollControl = useScroll();
+  const timeline = useRef();
+  const boxref = useRef();
+  
+  useLayoutEffect(() => {
+    timeline.current = gsap.timeline();
 
+    timeline.current.to(
+      boxref.current.rotation,
+      {
+        y:Math.PI*2,
+        duration: 9
+      },
+      5
+    )
+  
+  }),[];  
+
+  useFrame(() => {
+    timeline.current.seek(scrollControl.offset * 14);
+  });
   return (
     <>
-    <mesh>
-    <boxGeometry></boxGeometry>
-    </mesh>
-    </>
-  )
-}
+      <mesh ref={boxref}>
+        <boxGeometry></boxGeometry>
+      </mesh>
 
-export default Box
+      {/* <OrbitControls /> */}
+    </>
+  );
+};
+
+export default Box;

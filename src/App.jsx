@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="scene_container"> 
-    {/* <Labels/> */}
+    <Labels/>
      <Suspense fallback={null}>
           <Scene/>
       </Suspense>

@@ -17,7 +17,7 @@ export default function Scene() {
     >
       <ambientLight intensity={1.6} />
       <Environment files={"../models/abandoned_tiled_room_1k.hdr"} />
-      <ScrollControls pages={6} damping={0.60}>
+      <ScrollControls pages={6} damping={0.45}>
        <Model/>
         
       </ScrollControls>

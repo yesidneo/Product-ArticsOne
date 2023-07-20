@@ -150,26 +150,34 @@
   .scene_container {
     width: 100%;
     height: 100vh;
-    background: conic-gradient(rgb(182, 212, 255), rgb(0, 0, 0), rgb(146, 141, 248));
+    background: conic-gradient(rgb(31, 46, 66), rgb(0, 0, 0), rgb(146, 141, 248));
     
 }
-  
+.page--battery {
+  left: 63%;
+}
+.page--sounds {
+  left: 35%;
+}
+.page--brandlogo {
+  left: 35%;
+}
 
   .message {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 65px;
+    line-height: 65px;
 
   }
 
   .message--sub {
     display: none;
-    font-size: 13px;
+    font-size: 3px;
     padding-left: 5vh;
     padding-right: 5vh;
   }
 .comprar{
-  height: 15vh;
-  font-size: 8px;
+  
+  font-size: 18px;
 }
 /*   
   div#page-3 {

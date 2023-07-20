@@ -9,7 +9,6 @@ export function Model(props) {
   // animations control
   const scrollControl = useScroll();
   const timeline = useRef();
- 
 
   // meshes ref
   const generalGroupRef = useRef();
@@ -22,21 +21,21 @@ export function Model(props) {
   const camera = useThree((state) => state.camera);
 
   // Html div references
-  // const page_1_ref = useRef();
-  // const page_2_ref = useRef();
-  // const page_3_ref = useRef();
-  // const page_4_ref = useRef();
-  // const page_5_ref = useRef();
-  // const page_6_ref = useRef();
+  const page_1_ref = useRef();
+  const page_2_ref = useRef();
+  const page_3_ref = useRef();
+  const page_4_ref = useRef();
+  const page_5_ref = useRef();
+  const page_6_ref = useRef();
 
-  // useLayoutEffect(() => {
-  //   page_1_ref.current = document.getElementById("page-1");
-  //   page_2_ref.current = document.getElementById("page-2");
-  //   page_3_ref.current = document.getElementById("page-3");
-  //   page_4_ref.current = document.getElementById("page-4");
-  //   page_5_ref.current = document.getElementById("page-5");
-  //   page_6_ref.current = document.getElementById("page-6");
-  // }, []);
+  useLayoutEffect(() => {
+    page_1_ref.current = document.getElementById("page-1");
+    page_2_ref.current = document.getElementById("page-2");
+    page_3_ref.current = document.getElementById("page-3");
+    page_4_ref.current = document.getElementById("page-4");
+    page_5_ref.current = document.getElementById("page-5");
+    page_6_ref.current = document.getElementById("page-6");
+  }, []);
 
   useLayoutEffect(() => {
     timeline.current = gsap.timeline();
@@ -46,176 +45,108 @@ export function Model(props) {
 
     // -----------------------Headband Animations
     const HeadbandAnimations = [
-      // {
-      //   // Html div
-      //   // Restore previous animations
-      //   objectToAnimate: page_1_ref.current,
-      //   properties: {
-      //     opacity: 0,
-      //     duration: 0.3,
-      //   },
-      //   timelinePoint: 0.5,
-      // },
-      // // html div
-      // {
-      //   objectToAnimate: page_2_ref.current,
-      //   properties: {
-      //     opacity: 1,
-      //     duration: 0.8,
-      //   },
-      //   timelinePoint: 1.3,
-      // },
-
-      //Controls, Camera,CameraZoom
-      // {
-      //   objectToAnimate: controls.current.target,
-      //   properties: {
-      //     x: 0,
-      //     y: 3,
-      //     z: 0,
-      //   },
-      //   timelinePoint: 1.2,
-      // },
+      {
+        // Html div
+        // Restore previous animations
+        objectToAnimate: page_1_ref.current,
+        properties: {
+          opacity: 0,
+          duration: 0.3,
+        },
+        timelinePoint: 0.6,
+      },
+      // html div
+      {
+        objectToAnimate: page_2_ref.current,
+        properties: {
+          opacity: 1,
+          duration: 0.3,
+        },
+        timelinePoint: 1,
+      },
       {
         objectToAnimate: camera.position,
         properties: {
           x: 0,
-          y: 3,
-          z: 10,
-          duration: 1.1,
+          y: 2.3,
+          z: 6,
+          duration: 0.9,
         },
-        timelinePoint: 1.3,
+        timelinePoint: 0.6,
       },
 
-      {
-        objectToAnimate: camera,
-        properties: {
-          zoom: 2.6,
-          duration: 3,
-          onUpdate: () => {
-            camera.updateProjectionMatrix();
-          },
-        },
-        timelinePoint: 1.6,
-      },
 
-      {
-        objectToAnimate: generalGroupRef.current.rotation,
-        properties: {
-          x: 0.5,
-          y: 0,
-          z: 0,
-          duration: 1.2,
-        },
-        timelinePoint: 1.8,
-      },
+
+
     ];
     animationData = [...animationData, ...HeadbandAnimations];
 
     //------------------------ Sound Control Animation
 
     const SoundControlsAnimation = [
-        // {
-        //   objectToAnimate: page_2_ref.current,
-        //   properties: {
-        //     opacity: 0,
-        //     duration: 0.3,
-        //   },
-        //   timelinePoint: 2,
-        // },
+        {
+          objectToAnimate: page_2_ref.current,
+          properties: {
+            opacity: 0,
+            duration: 0.3,
+          },
+          timelinePoint: 1.9,
+        },
 
-        // //html div
-        // {
-        //   objectToAnimate: page_3_ref.current,
-        //   properties: {
-        //     opacity: 1,
-        //     duration: 0.3,
-        //   },
-        //   timelinePoint: 2.8,
-        // },
+        //html div
+        {
+          objectToAnimate: page_3_ref.current,
+          properties: {
+            opacity: 1,
+            duration: 0.3,
+          },
+          timelinePoint: 2.2,
+        },
         //Controls, Camera,CameraZoom
-      //   {
-      //     objectToAnimate: controls.current.target,
-      //     properties: {
-      //       x: -1.5761,
-      //       y: -1.7,
-      //       z: 0,
-      //       duration: 0.8,
-      //     },
-      //     timelinePoint: 2,
-      //   },
+ 
       {
         objectToAnimate: camera.position,
         properties: {
-          x: -0.1,
-          y: 0,
-          z: 12,
+          x: -1.8,
+          y: -1,
+          z: 4.2,
           duration: 1.2,
         },
         timelinePoint: 2,
       },
 
-      // {
-      //   objectToAnimate: camera,
-      //   properties: {
-      //     zoom: 2,
-      //     duration: 1.2,
-      //     onUpdate: () => {
-      //       camera.updateProjectionMatrix();
-      //     },
-      //   },
-      //   timelinePoint: 2.1,
-      // },
+    
 
       //   // General group ref
-      {
-        objectToAnimate: generalGroupRef.current.rotation,
-        properties: {
-          x: -0.3,
-          y: 0.8,
-          z: -0.1356,
-          duration: 1.2,
-        },
-        timelinePoint: 2.2,
-      },
+    
     ];
     animationData = [...animationData, ...SoundControlsAnimation];
 
     //------------------BatteryAnimations
 
     const BatteryAnimations = [
-        // // Restore previous animations
-        // {
-        //   objectToAnimate: page_3_ref.current,
-        //   properties: {
-        //     opacity: 0,
-        //     duration: 0.3,
-        //   },
-        //   timelinePoint: 3.3,
-        // },
+        // Restore previous animations
+        {
+          objectToAnimate: page_3_ref.current,
+          properties: {
+            opacity: 0,
+            duration: 0.3,
+          },
+          timelinePoint: 3.1,
+        },
 
-        // //html div
-        // {
-        //   objectToAnimate: page_4_ref.current,
-        //   properties: {
-        //     opacity: 1,
-        //     duration: 0.3,
-        //   },
-        //   timelinePoint: 3.3,
-        // },
+        //html div
+        {
+          objectToAnimate: page_4_ref.current,
+          properties: {
+            opacity: 1,
+            duration: 0.3,
+          },
+          timelinePoint: 3.6,
+        },
 
       //   //Controls, Camera,CameraZoom
-      //   {
-      //     objectToAnimate: controls.current.target,
-      //     properties: {
-      //       x: 1,
-      //       y: -1,
-      //       z: 0,
-      //       duration: 0.8,
-      //     },
-      //     timelinePoint: 3,
-      //   },
-
+      
       {
         objectToAnimate: generalGroupRef.current.rotation,
         properties: {
@@ -229,7 +160,7 @@ export function Model(props) {
       {
         objectToAnimate: camera.position,
         properties: {
-          x: -0.9,
+          x: 0.9,
           y: -1,
 
           duration: 1,
@@ -259,7 +190,7 @@ export function Model(props) {
           transparent: true,
           duration: 1.5,
         },
-        timelinePoint: 3.4,
+        timelinePoint: 3.6,
       },
     ];
 
@@ -269,56 +200,35 @@ export function Model(props) {
 
     const ConstructionsAnimations = [
       // // Restore previous animations
-      // {
-      //   objectToAnimate: coverLeftRef.current.material,
-      //   properties: {
-      //     opacity: 1,
-      //     transparent: false,
-      //     duration: 0.8,
-      //   },
-      //   timelinePoint: 4.2,
-      // },
-      //   {
-      //     objectToAnimate: page_4_ref.current,
-      //     properties: {
-      //       opacity: 0,
-      //       duration: 0.3,
-      //     },
-      //     timelinePoint: 4.1,
-      //   },
-      //   // Html div
-      //   {
-      //     objectToAnimate: page_5_ref.current,
-      //     properties: {
-      //       opacity: 1,
-      //       duration: 0.8,
-      //     },
-      //     timelinePoint: 4.6,
-      //   },
+      {
+        objectToAnimate: coverLeftRef.current.material,
+        properties: {
+          opacity: 1,
+          transparent: false,
+          duration: 0.8,
+        },
+        timelinePoint: 4.2,
+      },
+        {
+          objectToAnimate: page_4_ref.current,
+          properties: {
+            opacity: 0,
+            duration: 0.3,
+          },
+          timelinePoint: 4.2,
+        },
+      //  Html div
+        {
+          objectToAnimate: page_5_ref.current,
+          properties: {
+            opacity: 1,
+            duration: 0.6,
+          },
+          timelinePoint: 4.8,
+        },
 
       //   //Controls, Camera,CameraZoom
-      //   {
-      //     objectToAnimate: controls.current.target,
-      //     properties: {
-      //       x: 4.4156,
-      //       y: -1.996,
-
-      //       duration: 0.8,
-      //     },
-      //     timelinePoint: 4,
-      //   },
-
-      // {
-      //   objectToAnimate: camera,
-      //   properties: {
-      //     zoom: 1.2,
-      //     duration: 1.2,
-      //     onUpdate: () => {
-      //       camera.updateProjectionMatrix();
-      //     },
-      //   },
-      //   timelinePoint: 4.4,
-      // },
+    
 
       // General group ref
       {
@@ -431,51 +341,31 @@ export function Model(props) {
         },
         timelinePoint: 5.6,
       },
-        // {
-        //   objectToAnimate: page_5_ref.current,
-        //   properties: {
-        //     opacity: 0,
-        //     duration: 0.3,
-        //   },
-        //   timelinePoint: 5.8,
-        // },
-        // {
-        //   objectToAnimate: page_6_ref.current,
-        //   properties: {
-        //     opacity: 1,
-        //     duration: 0.8,
-        //   },
-        //   timelinePoint: 6.2,
-        // },
+        {
+          objectToAnimate: page_5_ref.current,
+          properties: {
+            opacity: 0,
+            duration: 0.3,
+          },
+          timelinePoint: 5.8,
+        },
+        {
+          objectToAnimate: page_6_ref.current,
+          properties: {
+            opacity: 1,
+            duration: 0.8,
+          },
+          timelinePoint: 6.2,
+        },
 
       //   // Controls, Camera, Camera zoom
-      //   {
-      //     objectToAnimate: controls.current.target,
-      //     properties: {
-      //       x: -1.8,
-      //       y: 1.10198,
-      //       z: 0,
-      //       duration: 0.8,
-      //     },
-      //     timelinePoint: 5.5,
-      //   },
-      //   {
-      //     objectToAnimate: camera,
-      //     properties: {
-      //       zoom: 1.8,
-      //       duration: 0.8,
-      //       onUpdate: () => {
-      //         camera.updateProjectionMatrix();
-      //       },
-      //     },
-      //     timelinePoint: 5.8,
-      //   },
+      
       {
         objectToAnimate: camera.position,
         properties: {
-          x: -2.6,
+          x: -2.1,
           y: 1,
-          z: 19,
+          z: 6,
           duration: 0.8,
         },
         timelinePoint: 5.5,

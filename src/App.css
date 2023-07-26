@@ -143,6 +143,9 @@
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
+div#svg-scroll {
+  display: none;
+}
 
 @media (max-width: 600px) {
 
@@ -157,6 +160,9 @@
   left: 63%;
 }
 .page--sounds {
+  left: 35%;
+}
+.page--construction {
   left: 35%;
 }
 .page--brandlogo {
@@ -188,5 +194,100 @@
     left: 50%;
     width: 100vw;
 } */
+
+
+/*scrolling and swip-up */
+/* .arrow-up{
+  fill: transparent;
+	stroke: #ffffff;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+} */
+.hand-y {
+	fill: #ffffffb2;
+	stroke: #ffffffb2;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+/* .line-vertical{
+  fill: transparent;
+	stroke: #ffffff;
+	stroke-width: 3px;
+
+  
+} */
+
+
+.arrow-up-1{
+	opacity: 0.25;
+    fill: transparent;
+	stroke: #ffffff;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.arrow-up-2{
+	opacity: 0.5;
+  fill: transparent;
+	stroke: #ffffff;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.arrow-up-3{
+	opacity: 0.75;
+  fill: transparent;
+	stroke: #ffffff;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+	
+}
+
+@keyframes swipe-y {
+	0% {
+		transform: translateY(0px);
+	}
+	25% {
+		transform: translateY(50px) rotateZ(-10deg);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	75% {
+		transform: translateY(-50px) rotateZ(10deg);
+	}
+}
+
+@keyframes flick-fade {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+}
+.hand-y {
+	animation: swipe-y 1.25s ease-in-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.arrows {
+ 
+	opacity: 0;
+	animation: flick-fade 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+div#svg-scroll {
+  display: block;
+  padding-top: 75vh;
+  padding-left: 25vh;
+  width: 30vw;
+ 
+}
 
 }

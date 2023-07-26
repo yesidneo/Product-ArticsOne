@@ -27,6 +27,7 @@ export function Model(props) {
   const page_4_ref = useRef();
   const page_5_ref = useRef();
   const page_6_ref = useRef();
+  const scroll_svg = useRef();
 
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById("page-1");
@@ -35,6 +36,8 @@ export function Model(props) {
     page_4_ref.current = document.getElementById("page-4");
     page_5_ref.current = document.getElementById("page-5");
     page_6_ref.current = document.getElementById("page-6");
+    scroll_svg.current = document.getElementById("svg-scroll");
+    
   }, []);
 
   useLayoutEffect(() => {
@@ -246,6 +249,8 @@ export function Model(props) {
         objectToAnimate: camera.position,
         properties: {
           x: 3,
+          y: -1.3,
+          z: 5,
           duration: 0.8,
         },
         timelinePoint: 4.3,

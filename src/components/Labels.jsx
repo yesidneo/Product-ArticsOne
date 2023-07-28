@@ -37,7 +37,7 @@ export default function Labels() {
           </p>
         </div>
         <div id="page-5" className="page page--construction page--hidden">
-          <h1 className="message">Best Construction</h1>
+          <h1 className="message best">Best Construction</h1>
           <p className="message--sub">
             That&apos;s why we&apos;ve engineered the best construction
             headphones to elevate your work experience like never before.

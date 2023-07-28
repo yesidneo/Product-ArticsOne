@@ -12,7 +12,11 @@ export function Model(props) {
 
   // meshes ref
   const generalGroupRef = useRef();
+  console.log(scrollControl)
+  console.log(timeline)
+  
   const coverLeftRef = useRef();
+  console.log(coverLeftRef)
   const rightCoverRef = useRef();
   const rightCoverInnerRef = useRef();
   const inside1Ref = useRef();
@@ -58,6 +62,14 @@ export function Model(props) {
         },
         timelinePoint: 0.6,
       },
+      {
+        objectToAnimate: scroll_svg.current,
+        properties: {
+          opacity: 0,
+          duration: 0.3,
+        },
+        timelinePoint: 0.6,
+      },
       // html div
       {
         objectToAnimate: page_2_ref.current,
@@ -74,6 +86,16 @@ export function Model(props) {
           y: 2.3,
           z: 6,
           duration: 0.9,
+        },
+        timelinePoint: 0.6,
+      },
+      {
+        objectToAnimate: generalGroupRef.current.rotation,
+        properties: {
+          x: 0.5,
+          //  y: 1.6,
+          // z: -0.6,
+          duration: 1.2,
         },
         timelinePoint: 0.6,
       },
@@ -165,6 +187,7 @@ export function Model(props) {
         properties: {
           x: 0.9,
           y: -1,
+          z: 4.9,
 
           duration: 1,
         },
@@ -370,7 +393,7 @@ export function Model(props) {
         properties: {
           x: -2.1,
           y: 1,
-          z: 6,
+          z: 8,
           duration: 0.8,
         },
         timelinePoint: 5.5,
@@ -389,6 +412,8 @@ export function Model(props) {
     ];
     animationData = [...animationData, ...BrandLogoAnimations];
 
+    //------------------------ animation timeline current
+    
     animationData.map((animation) => {
       timeline.current.to(
         animation.objectToAnimate,

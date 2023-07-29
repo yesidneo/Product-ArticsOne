@@ -1,6 +1,7 @@
 import React from "react";
 import SwipeUp from "./SwipeUp";
 import Up from "./Up";
+import ScrollDown from "./ScrollDown";
 
 export default function Labels() {
   return (
@@ -38,7 +39,7 @@ export default function Labels() {
         </div>
         <div id="page-5" className="page page--construction page--hidden">
           <h1 className="message best">Best Construction</h1>
-          <p className="message--sub">
+          <p className="message--sub textbest">
             That&apos;s why we&apos;ve engineered the best construction
             headphones to elevate your work experience like never before.
             <br></br>onals who demand the very best.
@@ -52,6 +53,9 @@ export default function Labels() {
         svgscroll">
           <SwipeUp />
           <Up/>
+        </div>
+        <div id="scroll-down"className="scrolldown">
+          <ScrollDown/>
         </div>
       </div>
     </div>

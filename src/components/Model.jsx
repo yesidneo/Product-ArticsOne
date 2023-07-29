@@ -32,6 +32,7 @@ export function Model(props) {
   const page_5_ref = useRef();
   const page_6_ref = useRef();
   const scroll_svg = useRef();
+  const scdown = useRef();
 
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById("page-1");
@@ -41,6 +42,7 @@ export function Model(props) {
     page_5_ref.current = document.getElementById("page-5");
     page_6_ref.current = document.getElementById("page-6");
     scroll_svg.current = document.getElementById("svg-scroll");
+    scdown.current = document.getElementById("scroll-down");
     
   }, []);
 
@@ -64,6 +66,14 @@ export function Model(props) {
       },
       {
         objectToAnimate: scroll_svg.current,
+        properties: {
+          opacity: 0,
+          duration: 0.3,
+        },
+        timelinePoint: 0.6,
+      },
+      {
+        objectToAnimate: scdown.current,
         properties: {
           opacity: 0,
           duration: 0.3,

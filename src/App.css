@@ -160,6 +160,82 @@
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
+
+
+/* -------------------Scroll down desktop version */
+.scrolldown{
+ padding-top:40%;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.field {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 300px;
+	flex-direction: column;
+}
+h2.scrolld{
+ margin:3vh ;
+ color: #ffffff79;
+ font-family: "roboto";
+ font-weight: 100;
+
+ 
+}
+.arrow {
+	width: 0;
+	height: 40px;
+	border: 1px solid #ffffff;
+	position: relative;
+	animation: scroll 1.5s infinite;
+	-webkit-animation: scroll 1.5s infinite;
+	&::after {
+		content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    width: 1px;
+    height: 10px;
+    border-top: 10px solid #ffffff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		height: 40px;
+	}
+	30% {
+		height: 70px;
+	}
+	60% {
+		height: 40px;
+	}
+}
+
+@-webkit-keyframes scroll {
+	0% {
+		height: 40px;
+	}
+	30% {
+		height: 70px;
+	}
+	60% {
+		height: 40px;
+	}
+}
+
 div#svg-scroll {
   display: none;
 }

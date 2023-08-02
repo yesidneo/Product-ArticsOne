@@ -3,7 +3,7 @@ import React from "react";
 const SwipeUp = () => {
   return (
     <div>
-
+      
       <svg
         id="Swipe-vertical_1"
         data-name="Swipe vertical 1"
@@ -46,7 +46,7 @@ const SwipeUp = () => {
       </g>
       </svg>
 
-
+      <h2 className="scrolld"> swipe-Up</h2>
     </div>
   );
 };

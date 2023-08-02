@@ -8,7 +8,7 @@ export default function Labels() {
     <div className="pages">
       <div className="pages_wrapper">
         <div id="page-1" className="page page--welcome page--intro">
-          <h1 className="message">ArticsOne</h1>
+          <h1 className="message --artics">Artics One</h1>
         </div>
         <div id="page-2" className="page page--headband page--hidden">
           <h1 className="message">Headband</h1>
@@ -21,7 +21,7 @@ export default function Labels() {
         </div>
         <div id="page-3" className="page page--sounds page--hidden">
           <h1 className="message">Sound Control</h1>
-          <p className="message--sub">
+          <p className="message--sub soundc">
             Scroll and Normal Modes for Unparalleled Control! Say goodbye to
             cumbersome controls and hello to a new era of headphone convenience!
             We are thrilled to present our groundbreaking Ergonomic Buttons with
